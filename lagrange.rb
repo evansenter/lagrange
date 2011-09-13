@@ -8,13 +8,15 @@ class Lagrange
   
   def initialize(*points)
     @points = points
-    raise ArgumentError.new("Must provide at least 2 points") unless points.length >= 2
   end
   
   def coefficients
-    coefficient_array = (0...points.length).map(&method(:basis_coefficients))
-    
-    coefficient_array.first.zip(*coefficient_array[1..-1]).map { |coefficients| coefficients.inject(&sum) }
+    if points.length == 1
+      points.map(&:last)
+    else
+      coefficient_array = (0...points.length).map(&method(:basis_coefficients))
+      coefficient_array.first.zip(*coefficient_array[1..-1]).map { |coefficients| coefficients.inject(&sum) }
+    end
   end
   
   def basis_coefficients(index_to_skip)
