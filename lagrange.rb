@@ -1,9 +1,4 @@
-class Lagrange
-  # ruby-1.9.2-p290 :419 > l = Lagrange.new([1, 1], [2, 4], [3, 9])
-  #  => #<Lagrange:0x007fce6c1b0188 @points=[[1, 1], [2, 4], [3, 9]]> 
-  # ruby-1.9.2-p290 :420 > l.coefficients
-  #  => [0.0, 0.0, 1.0] 
-  
+class Lagrange  
   attr_reader :points
   
   def initialize(*points)
