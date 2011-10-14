@@ -8,9 +8,9 @@
 
 int main(void)
 {
-#define MMAX 8
-#define NMAX 8
-#define NRHMAX 8
+#define MMAX 128
+#define NMAX 128
+#define NRHMAX 128
  const int lda=MMAX, ldb=NMAX;
  int i, info, j, m, n, nrhs;
  int pivot[MMAX];
@@ -46,6 +46,7 @@ int main(void)
  A(4,2) = compose_doublecomplex( 0.13, 0.0);
  A(4,3) = compose_doublecomplex( 0.19, 0.0);
  A(4,4) = compose_doublecomplex( 0.85, 0.0);
+ A(128,128) = compose_doublecomplex( 0.85, 0.0);
 
  /* Initialize right-hand-side matrix B */
  nrhs = 1;
