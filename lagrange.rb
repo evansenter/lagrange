@@ -1,3 +1,5 @@
+require "complex"
+
 class Lagrange  
   attr_reader :points
   
@@ -16,7 +18,7 @@ class Lagrange
   
   def basis_coefficients(index_to_skip)
     x_values     = points.map(&:first).each_with_index.reject { |points, index| index == index_to_skip }.map(&:first)
-    constant     = points[index_to_skip].last.to_f / x_values.map { |x| points[index_to_skip].first - x }.inject(&scalar)
+    constant     = (points[index_to_skip].last.kind_of?(Integer) ? points[index_to_skip].last.to_f : points[index_to_skip].last) / x_values.map { |x| points[index_to_skip].first - x }.inject(&scalar)
     coefficients = x_values.map(&scalar(-1)).inject([1.0]) do |coefficients, x|
       ([0.0] + coefficients).zip(coefficients.map(&scalar(x))).map do |array|
         array.compact.inject(&sum)
