@@ -1,4 +1,4 @@
-CC=gcc44
+CC=gcc
 CFLAGS=$(ACMLCFLAGS)
 
 zgesv: zgesv.o

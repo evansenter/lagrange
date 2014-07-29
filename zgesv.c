@@ -2,25 +2,25 @@
 #include <math.h>
 #include <stdio.h>
 
-doublecomplex addComplex(doublecomplex x, doublecomplex y) {
-  return compose_doublecomplex(x.real + y.real, x.imag + y.imag);
-};
-
-doublecomplex scalarComplex(doublecomplex x, double scalar) {
-  return compose_doublecomplex(x.real * scalar, x.imag * scalar);
-};
-
-doublecomplex multiplyComplex(doublecomplex x, doublecomplex y) {
-  return compose_doublecomplex(x.real * y.real - x.imag * y.imag, x.real * y.imag + x.imag * y.real);
-};
-
-doublecomplex powerComplex(doublecomplex x, double power) {
-  return scalarComplex(rectangularComplex(arctan(x.imag / x.real) * power), pow(sqrt(pow(x.real, 2) + pow(x.imag, 2)), power));
-};
-
-doublecomplex rectangularComplex(double angle) {
-  return compose_doublecomplex(cos(angle), sin(angle));
-};
+// doublecomplex addComplex(doublecomplex x, doublecomplex y) {
+//   return compose_doublecomplex(x.real + y.real, x.imag + y.imag);
+// };
+// 
+// doublecomplex scalarComplex(doublecomplex x, double scalar) {
+//   return compose_doublecomplex(x.real * scalar, x.imag * scalar);
+// };
+// 
+// doublecomplex multiplyComplex(doublecomplex x, doublecomplex y) {
+//   return compose_doublecomplex(x.real * y.real - x.imag * y.imag, x.real * y.imag + x.imag * y.real);
+// };
+// 
+// doublecomplex powerComplex(doublecomplex x, double power) {
+//   return scalarComplex(rectangularComplex(arctan(x.imag / x.real) * power), pow(sqrt(pow(x.real, 2) + pow(x.imag, 2)), power));
+// };
+// 
+// doublecomplex rectangularComplex(double angle) {
+//   return compose_doublecomplex(cos(angle), sin(angle));
+// };
 
 int main(void) {
   #define MMAX 128
@@ -42,15 +42,15 @@ int main(void) {
   printf("----------------------------------------------------------------\n");
   printf("\n");
   
-  for (polynomialDegree = 10; polynomialDegree < 11; polynomialDegree++) {
-    for (i = 0; i <= polynomialDegree; i++) {
-      
-    }
-  }
-  
-  doublecomplex foo;
-  foo = powerComplex(compose_doublecomplex(10, 9), 8);
-  printf(">> (%9.5f,%9.5f)", foo.real, foo.imag);
+  // for (polynomialDegree = 10; polynomialDegree < 11; polynomialDegree++) {
+  //   for (i = 0; i <= polynomialDegree; i++) {
+  //     
+  //   }
+  // }
+  // 
+  // doublecomplex foo;
+  // foo = powerComplex(compose_doublecomplex(10, 9), 8);
+  // printf(">> (%9.5f,%9.5f)", foo.real, foo.imag);
   
   /* Initialize matrix A */
   m = 4;
